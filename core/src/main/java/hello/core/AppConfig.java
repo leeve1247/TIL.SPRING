@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 // 설정정보, 구성정보를 담을 때 @Configuration 을 달아줍니다.
-@Configuration
+//@Configuration
 public class AppConfig {
 
     //Bean 을 하면 Spring Container 에 등록이 된다.
