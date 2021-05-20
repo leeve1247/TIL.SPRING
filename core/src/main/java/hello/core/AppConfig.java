@@ -16,23 +16,28 @@ public class AppConfig {
 
     //Bean 을 하면 Spring Container 에 등록이 된다.
     @Bean
-    public MemberService memberService(){
-//        구현체 생성을 대신 진행해 주는 것을 생성자 주입이라고 합니다.
-       return new MemberServiceImpl(memberRepository());
+    public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
+
+        // 구현체 생성을 대신 진행해 주는 것을 생성자 주입이라고 합니다.
+        return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemoryMemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
-    public DiscountPolicy discountPolicy(){
+    public DiscountPolicy discountPolicy() {
+        System.out.println("call AppConfig.discountPolicy");
         return new RateDiscountPolicy();
     }
 
     @Bean
-    public OrderService orderService(){
+    public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 }
