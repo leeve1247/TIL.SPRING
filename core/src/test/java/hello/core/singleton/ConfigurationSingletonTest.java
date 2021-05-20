@@ -2,7 +2,6 @@ package hello.core.singleton;
 
 import hello.core.AppConfig;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
@@ -42,7 +41,7 @@ public class ConfigurationSingletonTest {
         //스프링은 내가 만든 클래스를 CGLIB이라는 바이트코드 조작 라이브러리를 사용해서 다른 클래스를 만들고,
         //그 다른 클래스를 대안 클래스로서 등록함
         //이 대안 클래스가 싱글톤을 보장함(어떻게 생성하고 구성하는지는 매우 복잡함)
-        
+
         //AppConfig$$EnhancerBySpringCGLIB 은 AppConfig의 자식클래스라서 AppConfig로 조회가 가능함
     }
 }
