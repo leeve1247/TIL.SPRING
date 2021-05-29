@@ -27,6 +27,7 @@ public class ComponentFilterAppConfigTest {
 
     }
 
+    //있긴한데 그렇게 많이 쓰이진 않음(excludeFilters는 간혹 쓰긴 하나 많이 쓰지는 않음)
     @Configuration
     @ComponentScan(
             includeFilters = @Filter(classes = MyIncludeComponent.class),
