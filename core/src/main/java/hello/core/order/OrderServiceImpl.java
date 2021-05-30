@@ -13,8 +13,10 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
 
 
+
     //구현 객체는 appconfig 를 통해 생성한다.
-    @Autowired
+    //생성자가 딱 하나일 때는 Autowired를 사용하지 않아도 빈등록이 수행된다.
+    @Autowired // <- 빼도 된다는 말입니다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
