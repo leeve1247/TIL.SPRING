@@ -9,19 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService {
 
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
-
-    //수정자는 생성자 의존관계주입 이후에 생성됩니다.
-    @Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-        System.out.println("discountPolicy"+discountPolicy);
-        this.discountPolicy = discountPolicy;
-    }
-    @Autowired
-    public void setMemberRepository(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
     //구현 객체는 appconfig 를 통해 생성한다.
     //생성자가 딱 하나일 때는 Autowired를 사용하지 않아도 빈등록이 수행된다.
